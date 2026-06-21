@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rotting Girl — Violet Glock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .credits-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 2rem;
+      margin-top: 2.5rem;
+      max-width: 600px;
+    }
+    .credit-role {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0.85;
+    }
+    .credit-name {
+      font-size: 0.92rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-name"><a href="index.html">Violet Glock</a></div>
+    <ul class="nav-links">
+      <li><a href="films.html">Films</a></li>
+      <li><a href="rotting-girl.html" class="active">Rotting Girl</a></li>
+      <li><a href="puppets.html">Puppets</a></li>
+      <li><a href="fabrication.html">Fabrication</a></li>
+      <li><a href="illustration.html">Illustration</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-section" style="padding-top: 8rem;">
+    <div class="fade-in">
+      <p class="section-label">Featured Film</p>
+      <h2 class="section-title">Rotting Girl</h2>
+      <div class="film-meta" style="margin-bottom: 2rem;">Stop Motion · 8 min · 2024</div>
+
+      <!-- Replace this placeholder with your Vimeo embed:
+        <div class="video-embed">
+          <iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID?title=0&byline=0&portrait=0"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      -->
+      <div class="video-embed" style="margin-bottom: 2.5rem;">
+        <div class="video-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/>
+          </svg>
+          <p>Vimeo embed goes here</p>
+        </div>
+      </div>
+
+      <p class="film-desc" style="max-width: 700px;">
+        Write a longer synopsis of Rotting Girl here — a paragraph or two about the story, the themes you were exploring,
+        and what drew you to make it. This is the place to go deeper than the short description on the Films page.
+      </p>
+
+      <p class="film-desc" style="max-width: 700px;">
+        You can add a second paragraph here about your process — how long it took to shoot, what techniques you used,
+        what materials the puppets and sets were made from, or any specific challenges you solved along the way.
+      </p>
+
+      <!-- CREDITS -->
+      <h3 style="font-family: var(--ff-display); font-size: 1.1rem; font-weight: 600; margin-top: 3rem; margin-bottom: 0.5rem; opacity: 0.7;">Credits</h3>
+      <div class="credits-list">
+        <div class="credit-role">Direction &amp; Animation</div>
+        <div class="credit-name">Violet Glock</div>
+
+        <div class="credit-role">Puppet Fabrication</div>
+        <div class="credit-name">Violet Glock</div>
+
+        <div class="credit-role">Sound Design</div>
+        <div class="credit-name">[Name, if applicable]</div>
+
+        <div class="credit-role">Music</div>
+        <div class="credit-name">[Name, if applicable]</div>
+      </div>
+      <!-- Add or remove rows above as needed. Delete a credit_role/credit_name pair entirely if it doesn't apply. -->
+
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 14" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,7 C80,11 160,3 240,8 C320,13 400,2 480,7 C560,12 640,3 720,8 C800,13 880,2 960,7 C1040,12 1120,3 1200,7"
+        fill="none" stroke="#1C1410" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <!-- BEHIND THE SCENES / STILLS -->
+  <section class="page-section">
+    <div class="fade-in">
+      <p class="section-label">Behind the Scenes</p>
+      <h2 class="section-title">Production Stills</h2>
+      <div class="gallery-grid">
+        <!-- Replace each div.gallery-item with:
+          <div class="gallery-item"><img src="images/rotting-girl-still-1.jpg" alt="Description"></div>
+        -->
+        <div class="gallery-item"><div class="gallery-placeholder">still</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">still</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">still</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">still</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">still</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">still</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 Violet Glock — All rights reserved</footer>
+
+  <!-- LIGHTBOX (full screen image viewer with navigation) -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+  <script src="lightbox.js"></script>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

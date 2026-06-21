@@ -18,6 +18,7 @@ violetglock.github.io/
 ├── about.html           ← about page
 ├── contact.html         ← contact page
 ├── style.css            ← shared styling for ALL pages (edit once, updates everywhere)
+├── lightbox.js          ← full screen image viewer, used on all gallery pages
 ├── images/               ← put all your photos here
 └── video/                ← put your hero background video here
 ```
@@ -113,15 +114,28 @@ The `.hero-video` class works for both video and image, so the layout won't brea
 
 ---
 
-## Editing the homepage title
+## About the homepage
+
+The homepage is intentionally a single, locked screen: just the video, your name, and a small subtitle underneath. There's nothing below it and it doesn't scroll — visitors get to every other page through the nav links in the top right corner.
+
+**Editing the name and subtitle**
 
 In `index.html`, search for:
 
 ```html
 <h1 class="hero-title">Violet Glock</h1>
+<p class="hero-subtitle">Stop Motion Animator &amp; Illustrator</p>
 ```
 
-Change the text between the tags. It will always render in bold, uppercase letters automatically — you don't need to type it in capitals yourself, the styling handles that.
+Change either line of text. The name always renders in bold, uppercase letters automatically — you don't need to type it in capitals yourself, the styling handles that. The subtitle renders in smaller, lighter text underneath.
+
+**Why there's no name in the top-left corner**
+
+On every other page, the top-left corner shows "Violet Glock" as a link back to the homepage. The homepage itself skips this, since your name is already the centerpiece of the page — repeating it in the corner would be redundant. The nav links (Films, Rotting Girl, etc.) still appear in the top right as usual.
+
+**If you ever want scrolling content back on the homepage**
+
+The page is locked with `overflow: hidden` on the `html, body` selectors near the top of the `<style>` block in `index.html`. Removing that rule (and the `height: 100%` next to it) will let the page scroll again if you decide to add more content below the hero later.
 
 ---
 
@@ -291,7 +305,39 @@ If you create a 9th page later, copy this nav block into it and add a link to it
 
 ---
 
-## Optional: custom domain (e.g. violetglock.com)
+## Full screen image viewer (lightbox)
+
+Every gallery page — Puppets, Fabrication, Illustration, and the Rotting Girl production stills — has a built-in full screen viewer. Click any real photo (not a gray placeholder) and it opens full screen with:
+
+- **Arrow buttons** on screen, left and right, to move between images
+- **Keyboard arrow keys** (← and →) to do the same
+- **Closing it**: click the photo again, click the X in the top corner, press Escape, or click anywhere on the dark background
+- A small counter in the bottom corner (e.g. "3 / 9") showing your position in the gallery
+
+**You don't need to do anything to activate this** — it's already wired up on those four pages. As you replace placeholder boxes with real `<img>` tags (see "Adding photos to a gallery page" above), the lightbox automatically picks them up in the order they appear in the HTML. No extra setup per image.
+
+**How it works under the hood:** the viewer logic lives in one shared file, `lightbox.js`, linked at the bottom of each gallery page. The styling lives in `style.css` alongside everything else. If you ever add a 9th gallery page of your own, copy this block and paste it right before the closing `</body>` tag, after your footer:
+
+```html
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+<script src="lightbox.js"></script>
+```
+
+That's the entire setup — as long as your page has a normal `.gallery-grid` of `.gallery-item` divs with real `<img>` tags inside, it'll work without any further changes.
+
+---
+
+
 
 Domains cost about $12/year from Namecheap or Cloudflare. After buying one:
 1. Add a file named `CNAME` (no extension) to your repo containing just your domain name
