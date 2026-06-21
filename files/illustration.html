@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Illustration — Violet Glock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-name"><a href="index.html">Violet Glock</a></div>
+    <ul class="nav-links">
+      <li><a href="films.html">Films</a></li>
+      <li><a href="rotting-girl.html">Rotting Girl</a></li>
+      <li><a href="puppets.html">Puppets</a></li>
+      <li><a href="fabrication.html">Fabrication</a></li>
+      <li><a href="illustration.html" class="active">Illustration</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-section" style="padding-top: 8rem;">
+    <div class="fade-in">
+      <p class="section-label">Work</p>
+      <h2 class="section-title">Illustration</h2>
+      <p class="intro-text">Character studies, concept art, and standalone illustration work.</p>
+
+      <div class="gallery-grid">
+        <!-- Replace each div.gallery-item with:
+          <div class="gallery-item"><img src="images/illo-1.jpg" alt="Description of illustration"></div>
+        -->
+        <div class="gallery-item"><div class="gallery-placeholder">illustration</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">illustration</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">illustration</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">illustration</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">illustration</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">illustration</div></div>
+      </div>
+      <!-- To add more, duplicate a .gallery-item block above. The grid adjusts automatically. -->
+
+    </div>
+  </section>
+
+  <footer>© 2025 Violet Glock — All rights reserved</footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

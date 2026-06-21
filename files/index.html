@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Violet Glock — Stop Motion Animator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ─── HERO WITH VIDEO BACKGROUND ───────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--ink); /* shows while video loads, and if video fails */
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 50%; left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto; height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* Dark overlay so the title stays readable over any footage */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 20, 16, 0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero-title {
+      font-family: var(--ff-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: clamp(2.4rem, 9vw, 6.5rem);
+      line-height: 1;
+      color: var(--linen);
+    }
+
+    .hero-scroll-cue {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--linen);
+      opacity: 0.6;
+    }
+
+    .hero-scroll-cue span {
+      display: block;
+      width: 1px;
+      height: 28px;
+      background: var(--linen);
+    }
+
+    /* Nav sits transparent over the video at the top of this page only */
+    .hero-nav {
+      background: transparent;
+      border-bottom: none;
+    }
+
+    .hero-nav .nav-name,
+    .hero-nav .nav-links a {
+      color: var(--linen);
+    }
+
+    .hero-nav.scrolled {
+      background: rgba(247, 243, 238, 0.92);
+      border-bottom: 1px solid var(--paper);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-nav.scrolled .nav-name,
+    .hero-nav.scrolled .nav-links a {
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV (transparent over video, solidifies on scroll) -->
+  <nav class="hero-nav" id="siteNav">
+    <div class="nav-name">Violet Glock</div>
+    <ul class="nav-links">
+      <li><a href="films.html">Films</a></li>
+      <li><a href="rotting-girl.html">Rotting Girl</a></li>
+      <li><a href="puppets.html">Puppets</a></li>
+      <li><a href="fabrication.html">Fabrication</a></li>
+      <li><a href="illustration.html">Illustration</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <!--
+      LOOPING BACKGROUND VIDEO
+      Replace the src below with your own video file.
+      1. Put your video file inside the /video folder (e.g. video/reel.mp4)
+      2. Keep it short (5-20 sec loop) and under ~15MB so it loads fast
+      3. Export as .mp4 (H.264) for best browser support
+      See the README for full instructions, including how to compress a video.
+    -->
+    <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg">
+      <source src="video/your-video-file.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Violet Glock</h1>
+    </div>
+
+    <div class="hero-scroll-cue"><span></span>Scroll</div>
+  </header>
+
+  <!-- DIVIDER -->
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 14" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,7 C60,2 120,12 180,7 C240,2 300,12 360,7 C420,2 480,12 540,7 C600,2 660,12 720,7 C780,2 840,12 900,7 C960,2 1020,12 1080,7 C1140,2 1180,10 1200,7"
+        fill="none" stroke="#1C1410" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <!-- SECTION HUB CARDS -->
+  <section class="page-section">
+    <div class="fade-in">
+      <p class="section-label">Explore</p>
+      <h2 class="section-title">Stop Motion Animator &amp; Illustrator</h2>
+      <p class="intro-text">I build worlds out of wire, foam, and light — one painstaking frame at a time. Browse my film work, fabrication process, and illustration below.</p>
+
+      <div class="section-cards">
+        <a class="section-card" href="rotting-girl.html">
+          <div class="section-card-label">Featured Film</div>
+          <div class="section-card-title">Rotting Girl</div>
+        </a>
+        <a class="section-card" href="films.html">
+          <div class="section-card-label">Watch</div>
+          <div class="section-card-title">All Films</div>
+        </a>
+        <a class="section-card" href="puppets.html">
+          <div class="section-card-label">Browse</div>
+          <div class="section-card-title">Puppets</div>
+        </a>
+        <a class="section-card" href="fabrication.html">
+          <div class="section-card-label">Browse</div>
+          <div class="section-card-title">Fabrication</div>
+        </a>
+        <a class="section-card" href="illustration.html">
+          <div class="section-card-label">Browse</div>
+          <div class="section-card-title">Illustration</div>
+        </a>
+        <a class="section-card" href="about.html">
+          <div class="section-card-label">Read</div>
+          <div class="section-card-title">About</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 Violet Glock — All rights reserved</footer>
+
+  <script>
+    // Solidify nav background once the user scrolls past the hero
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight * 0.7) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
